@@ -4,14 +4,14 @@ include 'koneksi.php';
 $id = $_POST['id'];
 
 // Query
-$query_hapus = "DELETE FROM tabel WHERE id = '$id'";
+$query_hapus = "DELETE FROM data_pekerja WHERE id = '$id'";
 $hapus = mysqli_query($db, $query_hapus);
 
 // Cek
 if ($hapus) {
-    echo "Data berhasil dihapus";
+    header("location: ../index.php");
 } else {
-    echo "Gagal menghapus data";
+    header("location: ../index.php");
 }
 
 ?>
